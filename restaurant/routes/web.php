@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+Use App\Http\Controllers\Restocontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get("/",[Restocontroller::class,'welcome']);
+Route::get("list",[Restocontroller::class,'list']);
+Route::view("add",'add');
+Route::post("add",[Restocontroller::class,'add']);
+Route::get("register",[Restocontroller::class,'register']);
+Route::get("login",[Restocontroller::class,'login']);
